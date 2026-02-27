@@ -1,0 +1,9 @@
+permissions:
+  exec: none
+  network: allowlist
+  filesystem: read_only
+  secrets: none
+  persistence: forbidden
+
+allowed_domains:
+  - api.acme-corp.dev

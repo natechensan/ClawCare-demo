@@ -1,0 +1,42 @@
+name: ClawCare Security Scan
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    name: Scan for malicious extensions
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ClawCare
+        run: pip install clawcare
+
+      - name: Run ClawCare scan
+        run: clawcare scan . --ci --format text
+
+      - name: Save JSON report
+        if: always()
+        run: clawcare scan . --format json --json-out clawcare-report.json || true
+
+      - name: Upload scan report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clawcare-report
+          path: clawcare-report.json
+          retention-days: 30

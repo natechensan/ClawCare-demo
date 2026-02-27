@@ -1,0 +1,6 @@
+# Guard configuration for the OpenClaw demo
+guard:
+  fail_on: high
+  audit:
+    enabled: true
+    log_path: .clawcare/audit.jsonl

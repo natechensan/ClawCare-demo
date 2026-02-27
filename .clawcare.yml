@@ -1,0 +1,12 @@
+scan:
+  fail_on: high
+  ignore_rules:
+    - DATA_EMAIL_COLLECTION
+  exclude:
+    - "docs/**"
+
+guard:
+  fail_on: high
+  audit:
+    enabled: true
+    log_path: "~/.clawcare/history.jsonl"

@@ -1,0 +1,28 @@
+# Custom Ruleset — Company Policy
+#
+# Example: your org bans `sudo`, production DB connections,
+# and use of deprecated internal APIs.
+
+- id: COMPANY_NO_SUDO
+  severity: high
+  pattern: "\\bsudo\\b"
+  explanation: >
+    Company policy prohibits sudo in agent-generated commands.
+    All deployments must use rootless containers.
+  remediation: Use rootless Podman or ask DevOps for access.
+
+- id: COMPANY_NO_PROD_DB
+  severity: critical
+  pattern: "\\b(prod|production)[_.-]?(db|database|postgres|mysql|mongo)"
+  explanation: >
+    Direct production database access from agent skills is forbidden.
+    Use the read-replica or staging environment instead.
+  remediation: Replace with staging DB connection or use the data API.
+
+- id: COMPANY_DEPRECATED_API
+  severity: medium
+  pattern: "api\\.internal\\.legacy\\."
+  explanation: >
+    The legacy internal API (api.internal.legacy.*) is deprecated
+    and scheduled for removal. Use api.v2.internal instead.
+  remediation: Migrate to api.v2.internal.*.
