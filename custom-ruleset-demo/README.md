@@ -59,5 +59,5 @@ Each `.yml` file in a ruleset folder contains a list of rules:
   remediation: Use rootless Podman or ask DevOps for access.
 ```
 
-See the [ClawCare README](https://github.com/natechensan/ClawCare#custom-rulesets)
+See the [ClawCare README](https://github.com/AgentSafety/ClawCare#custom-rulesets)
 for the full rule schema.

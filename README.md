@@ -1,6 +1,6 @@
 # ClawCare Demo
 
-A demo repository showing how [ClawCare](https://github.com/natechensan/ClawCare) protects your codebase from malicious AI agent skills, extensions, and dangerous runtime commands.
+A demo repository showing how [ClawCare](https://github.com/AgentSafety/ClawCare) protects your codebase from malicious AI agent skills, extensions, and dangerous runtime commands.
 
 > **Fork this repo, open a PR that adds a sketchy skill, and watch ClawCare block it.**
 
@@ -22,7 +22,7 @@ A demo repository showing how [ClawCare](https://github.com/natechensan/ClawCare
 
 ```bash
 pip install clawcare
-git clone https://github.com/natechensan/ClawCare-demo
+git clone https://github.com/AgentSafety/ClawCare-demo
 cd ClawCare-demo
 ```
 
@@ -215,9 +215,9 @@ Config is resolved in priority order:
 
 ## Learn More
 
-- [ClawCare README](https://github.com/natechensan/ClawCare)
-- [Rule Reference](https://github.com/natechensan/ClawCare/tree/main/clawcare/rulesets/default)
-- [Configuration Guide](https://github.com/natechensan/ClawCare#configuration)
+- [ClawCare README](https://github.com/AgentSafety/ClawCare)
+- [Rule Reference](https://github.com/AgentSafety/ClawCare/tree/main/clawcare/rulesets/default)
+- [Configuration Guide](https://github.com/AgentSafety/ClawCare#configuration)
 
 ## License
 
